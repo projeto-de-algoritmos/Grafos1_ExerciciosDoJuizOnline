@@ -10,7 +10,7 @@
 | xx/xxxxxx  |  Lameque Fernandes de Azevedo |
 
 ## Sobre 
-O repositório contém soluções para algumas questões de juíz online do AtCoder e BeeCrowd
+O repositório contém soluções para algumas questões de juíz online do CodeWars
 
 ## Screenshots
 Adicione 3 ou mais screenshots do projeto em funcionamento.
