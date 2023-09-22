@@ -1,16 +1,23 @@
 # Exercícios Resolvidos
 
-**Número da Lista**: X<br>
 **Conteúdo da Disciplina**: Grafos 1
 
 ## Alunos
+
 |Matrícula | Aluno |
 | -- | -- |
 | 20/0017772  |  Fellipe Pereira da Costa Silva |
-| xx/xxxxxx  |  Lameque Fernandes de Azevedo |
+| 18/0104390  |  Lameque Fernandes de Azevedo |
 
 ## Sobre 
-O repositório contém soluções para algumas questões de juíz online do CodeWars
+
+O repositório contém soluções para algumas questões de juíz online. Segue a lista dos exercicios escolhidos:
+
+- Codeforces Round 408 (Div. 2) - D. Police Stations (https://codeforces.com/contest/796/problem/D)
+- Educational Codeforces Round 22 - C. The Tag Game - (http://codeforces.com/contest/813/problem/C)
+- SPOJ - DIGOKEYS - Find the Treasure (https://www.spoj.com/problems/DIGOKEYS/)
+- SPOJ - SPIKES - Spiky Mazes (https://www.spoj.com/problems/SPIKES/)
+
 
 ## Screenshots
 Adicione 3 ou mais screenshots do projeto em funcionamento.
