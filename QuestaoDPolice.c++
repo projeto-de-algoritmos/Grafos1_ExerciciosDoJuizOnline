@@ -57,6 +57,21 @@ int main() {
         }
     }
 
+    // Contar o número total de arestas importantes
+    int importantEdges = 0;
+    for (const set<int>& edgeSet : ans) {
+        importantEdges += edgeSet.size();
+    }
+
+    // Imprimir o resultado
+    cout << importantEdges << '\n';
+
+    for (int i = 0; i < n - 1; i++) {
+        for (int edge : ans[i]) {
+            cout << edge << ' ';
+        }
+    }
+
     cout << '\n';
 
     return 0;
