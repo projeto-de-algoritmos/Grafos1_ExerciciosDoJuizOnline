@@ -31,6 +31,31 @@ int main() {
         vis[m] = true;
     }
 
+    // Ler as arestas e construir a lista de adjacência
+    for (int i = 1; i < n; i++) {
+        int u, v;
+        cin >> u >> v;
+        adj[u].push_back({v, i});
+        adj[v].push_back({u, i});
+        ans[i - 1].insert(i); // Inicialmente, todas as arestas são consideradas importantes
+    }
+
+    // Processar os vértices importantes
+    while (!q.empty()) {
+        int u = q.front();
+        q.pop();
+
+        for (Edge edge : adj[u]) {
+            int v = edge.v;
+            int index = edge.index;
+
+            if (!vis[v]) {
+                vis[v] = true;
+                ans[index - 1].clear(); // Remove a aresta da lista de arestas não importantes
+                q.push(v);
+            }
+        }
+    }
 
     cout << '\n';
 
