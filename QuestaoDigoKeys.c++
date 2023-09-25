@@ -59,6 +59,25 @@ int main() {
                 break;
             }
         }
+
+        // Verificar se encontramos um caminho válido
+        if (!encontrado) {
+            printf("-1\n\n");
+            continue;
+        }
+
+        // Reconstruir o caminho do destino para a origem
+        vector<int> caminho;
+        for (int i = n; i != 0; i = pai[i]) {
+            caminho.push_back(i);
+        }
+
+        // Saída do comprimento do caminho e do próprio caminho
+        printf("%d\n", caminho.size());
+        for (int i = caminho.size() - 1; i >= 0; i--) {
+            printf("%d ", caminho[i]);
+        }
+        printf("\n\n");
     }
 
     return 0;
