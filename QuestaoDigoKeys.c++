@@ -1,83 +1,74 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <set>
+#include <queue>
 using namespace std;
 
 int main() {
-    int t;
-    scanf("%d", &t);
+    int casos;
+    cin >> casos; // Lê o número de casos a serem processados
 
-    while (t--) {
+    while (casos--) {
         int n;
-        scanf("%d", &n);
+        cin >> n; // Lê o número de caixas
 
-        // Criar um vetor de conjuntos para armazenar as chaves de cada caixa
-        vector<set<int>> chave(n + 1);
+        vector<set<int>> chaves(n + 1); // Cria um vetor de conjuntos para armazenar as chaves de cada caixa
 
-        // Ler as chaves para cada caixa, exceto a última
         for (int i = 1; i < n; i++) {
             int m;
-            scanf("%d", &m);
+            cin >> m; // Lê o número de chaves disponíveis para a caixa 'i'
 
-            // Ler e armazenar as chaves da caixa atual
             while (m--) {
                 int caixa;
-                scanf("%d", &caixa);
-                chave[i].insert(caixa);
+                cin >> caixa; // Lê o número da caixa que a chave abre e a adiciona ao conjunto de chaves
+                chaves[i].insert(caixa);
             }
         }
 
-        // Inicializar um vetor de pais para rastrear o caminho
-        vector<int> pai(n + 1, -1);
-        pai[1] = 0;
+        vector<int> pai(n + 1, -1); // Cria um vetor para rastrear os pais de cada caixa no caminho
+        pai[1] = 0; // Define o pai da primeira caixa como 0 (raiz)
+        queue<pair<int, int>> fila; // Cria uma fila para realizar a busca em largura
+        fila.push(make_pair(1, 1)); // Adiciona a primeira caixa à fila com a profundidade 1
+        bool resultado = false; // Variável para verificar se encontrou o caminho até a última caixa
 
-        // Criar uma fila para a travessia BFS
-        queue<int> fila;
-        fila.push(1);
-        bool encontrado = false;
-
-        // Executar a BFS
         while (!fila.empty()) {
-            int k = fila.front();
-            fila.pop();
+            set<int>::iterator it;
+            int k = fila.front().first; // Caixa atual
+            int caixa = fila.front().second; // Profundidade atual
+            fila.pop(); // Remove a caixa da fila
 
-            // Iterar pelas chaves da caixa atual
-            for (int caixa_adjacente : chave[k]) {
-                if (pai[caixa_adjacente] == -1) {
-                    pai[caixa_adjacente] = k;
+            for (it = chaves[k].begin(); it != chaves[k].end(); it++) {
+                int nova_caixa = *it; // Próxima caixa a ser explorada
 
-                    // Se encontrarmos a caixa de destino, definir 'encontrado' como verdadeiro
-                    if (caixa_adjacente == n) {
-                        encontrado = true;
+                if (pai[nova_caixa] == -1) {
+                    pai[nova_caixa] = k; // Define o pai da próxima caixa
+                    if (nova_caixa == n) { // Se chegou à última caixa, define o resultado como verdadeiro
+                        resultado = true;
                         break;
                     }
-
-                    // Adicionar a caixa adjacente na fila
-                    fila.push(caixa_adjacente);
+                    fila.push(make_pair(nova_caixa, caixa + 1)); // Adiciona a próxima caixa à fila com profundidade incrementada
                 }
             }
 
-            if (encontrado) {
-                break;
-            }
+            if (resultado)
+                break; // Se já encontrou o caminho, encerra o loop
         }
 
-        // Verificar se encontramos um caminho válido
-        if (!encontrado) {
-            printf("-1\n\n");
-            continue;
+        if (!resultado) {
+            cout << "-1" << endl << endl; // Se não encontrou o caminho, imprime -1
+            continue; // Passa para o próximo caso
         }
 
-        // Reconstruir o caminho do destino para a origem
-        vector<int> caminho;
-        for (int i = n; i != 0; i = pai[i]) {
-            caminho.push_back(i);
-        }
+        vector<int> resultado_final;
+        for (int i = pai[n]; i != 0; i = pai[i])
+            resultado_final.push_back(i); // Constrói o caminho reverso, do último pai até o primeiro
 
-        // Saída do comprimento do caminho e do próprio caminho
-        printf("%d\n", caminho.size());
-        for (int i = caminho.size() - 1; i >= 0; i--) {
-            printf("%d ", caminho[i]);
-        }
-        printf("\n\n");
+        cout << resultado_final.size() << endl; // Imprime o tamanho do caminho
+
+        for (int i = resultado_final.size() - 1; i >= 0; i--)
+            cout << resultado_final[i] << " "; // Imprime o caminho reverso
+
+        cout << endl << endl;
     }
 
     return 0;
