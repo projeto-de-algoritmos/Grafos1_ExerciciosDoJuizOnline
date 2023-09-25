@@ -1,29 +1,38 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <set>
+#include <queue>
+
 using namespace std;
-using ll = long long;
-using vb = vector<bool>;
-using vvb = vector<vb>;
-using vi = vector<int>;
-using vvi = vector<vi>;
-using vvvi = vector<vvi>;
-const ll mod = 1e9 + 7,inf = 1e18;
 
-int main()
-{
-    setIO();
-    int n,k,d;
-    cin>>n>>k>>d;
-    vvvi adj(n + 1);//because we need to store the indices of each edge
-    vi dist(n + 1,1e9);
-    vb vis(n + 1,false);
-    vi colour(n,UNVISITED);
-    queue<int>q;
+const int N = 100010;
 
-   
-    vi ans;
-    for (int i = 1;i<=n - 1;i++)
-        if (colour[i] == UNVISITED)ans.pb(i);
-    cout<<ans.size()<<'\n';
-    for (int edge:ans)cout<<edge<<" ";
+// Define um tipo para representar uma aresta com índice
+struct Edge {
+    int v; // Vértice adjacente
+    int index; // Índice da aresta
+};
+
+int main() {
+    int n, k, d;
+    cin >> n >> k >> d;
+
+    vector<set<int>> ans(n - 1); // Conjunto de índices de arestas não importantes
+    vector<bool> vis(n + 1, false); // Vetor de visitados
+    vector<vector<Edge>> adj(n + 1); // Lista de adjacência com índices de arestas
+
+    queue<int> q;
+
+    // Ler os vértices iniciais marcados como importantes
+    for (int i = 0; i < k; i++) {
+        int m;
+        cin >> m;
+        q.push(m);
+        vis[m] = true;
+    }
+
+
+    cout << '\n';
+
     return 0;
 }
