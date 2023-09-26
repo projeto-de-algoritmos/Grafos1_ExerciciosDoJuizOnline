@@ -46,3 +46,6 @@ Passo a passo:
 *OBS*: Caso queira executar a questão com uma das entradas de exemplo fornecidas, utilize o seguinte comando: ```./<nome_do_arquivo_executavel> < in.txt``` 
 Dessa forma, será possível testar a questão com os exemplos de entrada fornecidos.
 
+## Apresentação
+
+> https://youtu.be/M8Z0_Dzt1Xg
