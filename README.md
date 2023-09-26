@@ -20,7 +20,16 @@ O repositório contém soluções para algumas questões de juíz online. Segue 
 
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+
+- Resultado do D. Police Stations
+![Resultado do D. Police Stations](assets/submit_d_police_stations.png)
+
+- Resultado do C. The Tag Game
+![Resultado do C. The Tag Game](assets/submit_the_tag_game.png)
+
+- Resultado do DIGOKEYS - Find the Treasure
+![Resultado do DIGOKEYS - Find the Treasure](assets/submit_digo_keys.png)
+
 
 ## Instalação 
 Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
