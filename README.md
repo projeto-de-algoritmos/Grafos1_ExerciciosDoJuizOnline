@@ -32,14 +32,17 @@ O repositório contém soluções para algumas questões de juíz online. Segue 
 
 
 ## Instalação 
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+Para executar as questões deste repositório, é necessário ter um compilador de C++ instalado.
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+Para rodar as questões presentes neste repositório, é recomendado utilizar o compilador g++.
 
-## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+Passo a passo:
+1. Clone o repositório utilizando o seguinte comando: ```git clone https://github.com/projeto-de-algoritmos/Grafos1_ExerciciosJuizOnline```
+2. Entre na pasta da questão que deseja executar: ```cd <pasta_da_questao>```
+3. Compile a questão com o seguinte comando: ```g++ -o <nome_desejado_para_o_executavel> <nome_da_questao.cpp>```
+4. Execute o arquivo executável gerado: ```./<nome_do_arquivo_executavel>```
 
-
-
+*OBS*: Caso queira executar a questão com uma das entradas de exemplo fornecidas, utilize o seguinte comando: ```./<nome_do_arquivo_executavel> < in.txt``` 
+Dessa forma, será possível testar a questão com os exemplos de entrada fornecidos.
 
