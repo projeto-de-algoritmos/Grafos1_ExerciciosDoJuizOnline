@@ -48,4 +48,7 @@ Dessa forma, será possível testar a questão com os exemplos de entrada fornec
 
 ## Apresentação
 
-> https://youtu.be/M8Z0_Dzt1Xg
+<video width="320" height="240" controls>
+  <source src="assets/apresentacao.mp4" type="video/mp4">
+  Seu navegador não suporta o elemento de vídeo.
+</video>
